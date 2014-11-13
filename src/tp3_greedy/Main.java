@@ -1,13 +1,14 @@
 package tp3_greedy;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) throws FileNotFoundException {
+		PrintWriter out_file = new PrintWriter("output_greedy.txt");
 		Scanner sc = new Scanner(new FileReader(args[0]));
 		sc.nextInt();
-		int count = 1;
 		int flag = 0;
 		String mensagem;
 		String msg_0 = new String();
@@ -53,11 +54,15 @@ public class Main {
 			msg_0 = new String();
 			if(flag==0){
 				System.out.println("false");
+				out_file.println("false");
 			}
 			else{
 				System.out.println("true");
+				out_file.println("true");
 				flag=0;
 			}
 		}
+		sc.close();
+		out_file.close();
 	}
 }
